@@ -11,6 +11,8 @@ const PORT = 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
 // Endpoint to run code
 app.post("/run", async (req, res) => {
   const { code, language } = req.body;
